@@ -1,0 +1,11 @@
+<h2>Heros List</h2>
+<ul>
+    <li class="list" *ngFor="let item of heros">
+        <a routerLink="/detail/{{item.id}}">
+            <span>{{item.id}}</span> {{item.name}}
+        </a>
+    </li>
+</ul>
+
+<button (click)="lookDetail()">look detail</button>
+<app-hero-detail [currentHero]="hero" (helloClick)="helloClick($event)"></app-hero-detail>

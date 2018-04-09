@@ -1,0 +1,18 @@
+.list {
+    list-style: none;
+    margin: 20px;
+}
+
+.list:hover{
+  padding-left: 10px;
+  color:red;
+}
+
+.list span{
+  display: inline-block;
+  width: 50px;
+  background-color:gray;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 20px;
+}

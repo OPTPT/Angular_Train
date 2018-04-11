@@ -6,13 +6,13 @@
         </li>
         <li>
             name:
-            <input [(ngModel)]="currentHero.name" />
+            <input (keyup)="updateHero()" [(ngModel)]="currentHero.name" />
         </li>
     </ul>
 </div>
 
-<button (click)="lookHello(hello)">look hello</button>
-<input #hello>{{hello.value}}
+<!-- <button (click)="lookHello(hello)">look hello</button>
+<input #hello>{{hello.value}} -->
 
 
 

@@ -29,7 +29,8 @@ export class HeroComponent implements OnInit {
     this.initData()
   }
   initData() {
-    this.heroService.getData().subscribe(
+    this.heroService.getData()
+    .subscribe(
       res => this.heros = res
     )
   }
@@ -40,13 +41,19 @@ export class HeroComponent implements OnInit {
   helloClick(hello) {
     console.log(hello)
   }
+
+  addHero(newHero){
+    this.heroService.addHero(newHero)
+    .subscribe(res=>{
+      this.initData();
+    })
+  }
+
   deleteHero(id) {
     console.log(id);
     this.heroService.deleteHero(id).subscribe(
       res => this.initData()
-
     )
-
   }
 
 }

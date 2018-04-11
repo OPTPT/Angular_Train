@@ -12,17 +12,6 @@ const heros: Routes = [
     redirectTo: '/heros',
     pathMatch: 'full'
   },
-
-  {
-    path: 'detail/:id',
-    redirectTo: 'detail/:id',
-    pathMatch: 'full'
-  },
-  {
-    path: 'dashboard',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  }
 ]
 @NgModule({
   imports: [

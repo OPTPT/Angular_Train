@@ -6,12 +6,14 @@ import { SharedModule } from "../shared/shared.module";
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router'
+import { HeroRoutingModule } from './hero-routing.module';
 
 @NgModule({
   imports: [
     SharedModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HeroRoutingModule
   ],
   providers: [HeroService],
   exports: [HeroDetailComponent, HeroComponent],

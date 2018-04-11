@@ -4,34 +4,39 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeroModule } from "./hero/hero.module";
-
 import { RouterModule, Routes } from '@angular/router'
-import { HeroComponent } from './hero/hero-home/hero.component';
-import { DashboardComponent } from './hero/dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero/hero-detail/hero-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 const heros: Routes = [
   {
-    path: 'heros',
-    component: HeroComponent
+    path: '',
+    redirectTo: '/heros',
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'detail/:id',
+    redirectTo: 'detail/:id',
+    pathMatch: 'full'
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'detail/:id',
-    component: HeroDetailComponent
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   }
 ]
 @NgModule({
   imports: [
     RouterModule.forRoot(heros),
-
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     HeroModule,
   ],
+  providers:[{
+    provide:'BASE_URL',
+    useValue:'http://localhost:3000'
+  }],
   declarations: [
     AppComponent,
   ],

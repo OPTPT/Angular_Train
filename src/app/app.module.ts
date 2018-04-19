@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HeroModule } from "./hero/hero.module";
 import { RouterModule, Routes } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
+import { OptTableModule } from './opt-table/opt-table.module';
 const heros: Routes = [
   {
     path: '',
-    redirectTo: '/heros',
+    redirectTo: '/table',
     pathMatch: 'full'
   },
 ]
@@ -21,6 +22,7 @@ const heros: Routes = [
     FormsModule,
     HttpModule,
     HeroModule,
+    OptTableModule
   ],
   providers:[{
     provide:'BASE_URL',

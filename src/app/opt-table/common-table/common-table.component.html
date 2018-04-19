@@ -1,0 +1,24 @@
+<table>
+  <caption>{{title}}</caption>
+  <thead>
+    <tr>
+      <th *ngFor="let th of headData" (click)="sortBy(th)">
+        {{th}}
+        <span [class]="sortOrders[th] > 0 ? 'arrow asc' : 'arrow dsc'">
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of tableData;let i = index">
+      <td *ngFor="let colName of headData;let j = index">
+        <span *ngIf="!editData[i][j]" (click)="edit(i,j)">{{row[colName]}}</span>
+        <input *ngIf="editData[i][j]" type="text" (blur)="edit(i,j)" name="" id="" [(ngModel)]="tableData[i][colName]"
+        />
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    foot
+  </tfoot>
+</table>

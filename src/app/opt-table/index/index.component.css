@@ -1,0 +1,15 @@
+table{
+  width: 100%;
+  border-top: 1px solid #7a7373;
+  border-left:1px solid #7a7373;
+  text-align: center;
+}
+
+th,td{
+  border-bottom: 1px solid #7a7373;
+  border-right:  1px solid #7a7373;
+}
+
+th{
+  background-color: #bfb5b5;;
+}
